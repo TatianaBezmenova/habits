@@ -1,0 +1,47 @@
+{% extends 'base/main.html' %}
+{% block content %}
+<h1>Список привычек</h1>
+
+
+<div class="toolbar-wrapper">
+    <div class="search-wrapper">
+        <form action="" method="get" class="search-form">
+            <input type="text" name="search-area" value="{{ search_input }}" class="search-input">
+            <input type="submit" value="Найти" class="button">
+        </form>
+    </div>
+    <div>
+        <a href="{% url 'task-create' %}" class="add">&#10010;</a>
+    </div>
+
+</div>
+
+<div class="task-items-wrapper">
+    {% for task in tasks%}
+    <div class="task-wrapper">
+        <div class="task-row">
+            {% if task.complete %}
+            <div class="task-row__title">
+                <div class="task-row__completed"></div>
+                <s><a href="{% url 'task' task.id %}">{{task}}</a></s>
+            </div>
+            <div class="task-row__icon">
+                <a class="delete-link" href="{% url 'task-delete' task.id %}">&#10006;</a>
+            </div>
+            {% else %}
+            <div class="task-row__title">
+                <div class="task-row__not_completed"></div>
+                <a href="{% url 'task' task.id %}">{{task}}</a>
+            </div>
+            <div class="task-row__icon">
+                <a class="update-link" href="{% url 'task-update' task.id %}">&#9998;</a>
+                <a class="delete-link" href="{% url 'task-delete' task.id %}">&#10006;</a>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+    {% empty %}
+    <h3>Нет привычек</h3>
+    {% endfor %}
+</div>
+{% endblock content %}

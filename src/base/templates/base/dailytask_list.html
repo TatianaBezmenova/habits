@@ -1,0 +1,26 @@
+{% extends 'base/main.html' %}
+{% block content %}
+<a href="{% url 'tasks' %}" class="back-icon">&larr;</a>
+<h3>Цель: {{ task }}</h3>
+<div>
+    <form action="{% url 'test' task.id %}" method="post">
+        {% csrf_token %}
+        <div class="box-check-wrapper">
+            {% for day in daily_tasks %}
+            <div class="box-check">
+                <div>
+                    {% if day.complete %}
+                    <input type="checkbox" id="{{ day.id }}" name="check" value="{{ day.id }}" class="input_checkbox"
+                           checked="checked">
+                    {% else %}
+                    <input type="checkbox" id="{{ day.id }}" name="check" value="{{ day.id }}" class="input_checkbox">
+                    {% endif %}
+                    <label class="box-check_label" for="{{ day.id }}">{{ day.date }}</label>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="log-in bubble-btn">Сохранить</div>
+    </form>
+</div>
+{% endblock content %}

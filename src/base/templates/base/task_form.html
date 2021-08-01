@@ -1,0 +1,9 @@
+{% extends 'base/main.html' %}
+{% block content %}
+<a href="{% url 'tasks' %}" class="back-icon">&larr;</a>
+<form action="" method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <div class="log-in bubble-btn">Сохранить</div>
+</form>
+{% endblock content %}

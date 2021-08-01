@@ -1,0 +1,9 @@
+{% extends 'base/main.html' %}
+{% block content %}
+<form action="" method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <div class="log-in bubble-btn">Войти</div>
+</form>
+<p>Нет аккаунта? <a href="{% url 'register' %}">Регистрация</a></p>
+{% endblock content %}

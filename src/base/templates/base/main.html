@@ -1,0 +1,39 @@
+{% load static %}
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Развить привычку</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+<div class="container">
+    <div class="header-bar">
+        {% if request.user.is_authenticated %}
+        <div>
+            <h1>Привет, {{ request.user|title }}!</h1>
+            {% if count %}
+            <h3>Количество вырабатываемых привычек {{count}}!</h3>
+            {% else %}
+            <h3></h3>
+            {% endif %}
+        </div>
+        <a href="{% url 'logout' %}">Выйти</a>
+        {% else %}
+        <div>
+            <h1>Привет!</h1>
+            <h3>Для начала необходимо войти в аккаунт.</h3>
+        </div>
+        <a href="{% url 'login' %}">Войти</a>
+        {% endif %}
+    </div>
+    {% block content %}
+
+    {% endblock content %}
+</div>
+<script src="{% static 'js/scripts.js' %}"></script>
+</body>
+</html>
