@@ -181,11 +181,10 @@ form p label {
 }
 
 .box-check-wrapper {
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    /* justify-content: space-evenly; */
-    column-gap: 2%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 150px);
+    grid-gap: 1rem;
+    justify-content: space-between;
 }
 
 .box-check {
@@ -212,14 +211,17 @@ form p label {
     height: 150px;
     width: 150px;
     background-color: rgba(204, 203, 203, 0.527);
+    box-shadow: 1px 1px 6px 1px gray;
 }
 
 .input_checkbox[type=checkbox]:checked+.box-check_label:before {
     text-align: center;
     content: 'Готово';
     color: #000;
-    background-color: rgb(131, 233, 247);
+    background-color: #7CE700;
     font-size: 30px;
+    box-shadow: 1px 1px 6px 1px gray;
+    margin-bottom: 6px;
 }
 
 .box-check_label:active {
