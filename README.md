@@ -9,3 +9,4 @@
 :green_circle: Python, Django
 :green_circle: JS
 :green_circle: HTML/CSS
+:green_circle: SQLite3
