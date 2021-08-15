@@ -3,7 +3,7 @@
 <a href="{% url 'tasks' %}"class="back-icon">&larr;</a>
 <form action="" method="post">
   {% csrf_token %}
-  <p>Вы уверены, что хотите удалить задачу "{{ task }}"?</p>
+  <p class="info_massage">Вы уверены, что хотите удалить задачу "{{ task }}"?</p>
   <input type="submit" value="Удалить" class="button">
 </form>
 {% endblock content %}

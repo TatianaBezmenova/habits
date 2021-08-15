@@ -3,7 +3,7 @@
 <a href="{% url 'tasks' %}" class="back-icon">&larr;</a>
 <h3>Цель: {{ task }}</h3>
 <div>
-    <form action="{% url 'test' task.id %}" method="post">
+    <form action="{% url 'daily_tasks' task.id %}" method="post">
         {% csrf_token %}
         <div class="box-check-wrapper">
             {% for day in daily_tasks %}

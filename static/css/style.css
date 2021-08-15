@@ -227,3 +227,16 @@ form p label {
 .box-check_label:active {
     transform: scale(1.1);
 }
+
+.errorlist li {
+    color: tomato;
+}
+
+.error input,
+.error select {
+    border: 2px tomato solid;
+}
+
+.info_massage {
+    margin-bottom: 20px;
+}
