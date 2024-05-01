@@ -1,4 +1,4 @@
-# habits:deciduous_tree:
+# habits
 Трекер привычек    
 Инструмент для формирования полезных привычек.    
 
@@ -6,7 +6,7 @@
 
 
 Средства разработки: 
-:green_circle: Python, Django
-:green_circle: JS
-:green_circle: HTML/CSS
-:green_circle: SQLite3
+- Python, Django
+- JS
+- HTML/CSS
+- SQLite3
